@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>700</width>
+    <height>1000</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="gridLayoutWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>600</width>
+      <height>900</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_2">
+     <item row="0" column="0">
+      <widget class="QLabel" name="trainingParameters">
+       <property name="text">
+        <string>Training parameters</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QPushButton" name="directoryButton">
+       <property name="text">
+        <string>Choose directory</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1" colspan="2">
+      <widget class="QLabel" name="dirLabel">
+       <property name="text">
+        <string>Chosen directory</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_5">
+       <property name="text">
+        <string>Preprocessing</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1" colspan="2">
+      <widget class="QListView" name="preprocListView"/>
+     </item>
+     <item row="3" column="1" colspan="2">
+      <widget class="QComboBox" name="faceDetComboBox"/>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="faceDetLabel">
+       <property name="text">
+        <string>Face detection algorithm</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="modelLabel">
+       <property name="text">
+        <string>FER algorithm</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1" colspan="2">
+      <widget class="QComboBox" name="modelComboBox"/>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Training parameters</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>Batch size</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="2">
+      <widget class="QLineEdit" name="batchSizeLineEdit"/>
+     </item>
+     <item row="6" column="2">
+      <widget class="QLineEdit" name="learningRateLineEdit"/>
+     </item>
+     <item row="6" column="1">
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>LR</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="2">
+      <widget class="QLineEdit" name="imgDimLineEdit"/>
+     </item>
+     <item row="7" column="1">
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>Image dim</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1">
+      <widget class="QLabel" name="label_7">
+       <property name="text">
+        <string>Dropout</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="2">
+      <widget class="QLineEdit" name="dropoutLineEdit"/>
+     </item>
+     <item row="9" column="2">
+      <widget class="QLineEdit" name="epochsLineEdit"/>
+     </item>
+     <item row="9" column="1">
+      <widget class="QLabel" name="label_8">
+       <property name="text">
+        <string>Epochs</string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="2">
+      <widget class="QLineEdit" name="splitLineEdit"/>
+     </item>
+     <item row="10" column="1">
+      <widget class="QLabel" name="label_9">
+       <property name="text">
+        <string>Split (%)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="11" column="0" colspan="2">
+      <widget class="QLabel" name="testingLabel">
+       <property name="text">
+        <string>Testing parameters</string>
+       </property>
+      </widget>
+     </item>
+     <item row="12" column="0">
+      <widget class="QPushButton" name="destinationButton">
+       <property name="text">
+        <string>Choose directory</string>
+       </property>
+      </widget>
+     </item>
+     <item row="12" column="1" colspan="2">
+      <widget class="QLabel" name="destLabel">
+       <property name="text">
+        <string>Save to</string>
+       </property>
+      </widget>
+     </item>
+     <item row="13" column="1" colspan="2">
+      <widget class="QPushButton" name="runButton">
+       <property name="text">
+        <string>Run training</string>
+       </property>
+      </widget>
+     </item>
+     <item row="14" column="0">
+      <widget class="QPushButton" name="ferModelButton">
+       <property name="text">
+        <string>Choose FER model</string>
+       </property>
+      </widget>
+     </item>
+     <item row="14" column="1" colspan="2">
+      <widget class="QLabel" name="ferModelLabel">
+       <property name="text">
+        <string>Chosen FER model</string>
+       </property>
+      </widget>
+     </item>
+     <item row="15" column="0">
+      <widget class="QPushButton" name="imageSelectionButton">
+       <property name="text">
+        <string>Choose test image</string>
+       </property>
+      </widget>
+     </item>
+     <item row="15" column="1" colspan="2">
+      <widget class="QLabel" name="imageSelectionLabel">
+       <property name="text">
+        <string>Chosen test image</string>
+       </property>
+      </widget>
+     </item>
+     <item row="16" column="1" colspan="2">
+      <widget class="QPushButton" name="testSingleImageButton">
+       <property name="text">
+        <string>Test single image</string>
+       </property>
+      </widget>
+     </item>
+     <item row="17" column="0">
+      <widget class="QPushButton" name="videoSelectionButton">
+       <property name="text">
+        <string>Choose test video</string>
+       </property>
+      </widget>
+     </item>
+     <item row="17" column="1" colspan="2">
+      <widget class="QLabel" name="testVideoLabel">
+       <property name="text">
+        <string>Chosen test video</string>
+       </property>
+      </widget>
+     </item>
+     <item row="18" column="1" colspan="2">
+      <widget class="QPushButton" name="testVideoButton">
+       <property name="text">
+        <string>Test video</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>497</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>destinationButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>setDirectory()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>375</x>
+     <y>288</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>416</x>
+     <y>285</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>directoryButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>getDirectory()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>149</x>
+     <y>45</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>55</x>
+     <y>74</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>runButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>train()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>369</x>
+     <y>325</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>416</x>
+     <y>366</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ferModelButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>getFerModel()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>149</x>
+     <y>45</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>55</x>
+     <y>74</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>imageSelectionButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>getTestImageSelection()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>149</x>
+     <y>45</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>55</x>
+     <y>74</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>testSingleImageButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>estimateEmotionSingleImage()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>369</x>
+     <y>325</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>416</x>
+     <y>366</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>videoSelectionButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>getVideoSelection()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>149</x>
+     <y>45</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>55</x>
+     <y>74</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>testVideoButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>estimateEmotionVideo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>369</x>
+     <y>325</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>416</x>
+     <y>366</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>getDirectory()</slot>
+  <slot>train()</slot>
+  <slot>setDirectory()</slot>
+  <slot>getFerModel()</slot>
+  <slot>getTestImageSelection()</slot>
+  <slot>estimateEmotionSingleImage()</slot>
+  <slot>getVideoSelection()</slot>
+  <slot>estimateEmotionVideo()</slot>
+ </slots>
+</ui>
