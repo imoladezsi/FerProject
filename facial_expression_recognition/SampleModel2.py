@@ -14,28 +14,30 @@ from facial_expression_recognition.ModelInterface import ModelInterface
 
 class SampleModel2(ModelInterface):
 
-    def fit(self):
-        return self._model.fit()
+    def get_history(self):
+        return self._model.history
+
+    def save(self, path):
+        return self._model.save(path)
+
+    def load_model(self, model_path):
+        return load_model(model_path)
+
+    def fit(self, train_x, train_y, test_x, test_y, epochs, batch_size):
+        return self._model.fit(train_x, train_y, validation_data=(test_x, test_y), epochs=epochs,
+                               batch_size=batch_size)
+
+    def save_weights(self, path):
+        self._model.save_weights(path)
 
     def get_name(self):
         return self.__class__.__name__
 
     def __init__(self):
-        self._img_dim = 0
-        self._depth = 0
-        self._dropout = 0
-        self._init_lr = 0
-        self._nr_classes = 0
+        super().__init__()
 
     def initialize_model(self):
         self._model = self.create_model()
-
-    def set_params(self,  img_dim, depth, dropout, init_lr, classes_no):
-        self._img_dim = img_dim
-        self._depth = depth
-        self._dropout = dropout
-        self._init_lr = init_lr
-        self._nr_classes = classes_no
 
     def create_model(self):
 
