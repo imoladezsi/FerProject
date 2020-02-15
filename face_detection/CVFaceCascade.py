@@ -24,8 +24,10 @@ class CVFaceCascade(FaceDetectionInterface):
         # image is a PIL image, for now we assume each image has a single face on it
         # needed changes: for loop here and duplicate the labels
 
-        [x,y,w,h] = face[0][0]
-        targetFace = image[x:x+w, y:y+h]
+        face_box = face[0][0]
+        (startX, startY, width, height) = face_box.astype("int")
+
+        targetFace = image[startX:(startX+width), startY:(startY+height), :]
         # Shows the image in image viewer
         return targetFace
 
@@ -37,8 +39,10 @@ class CVFaceCascade(FaceDetectionInterface):
         face = self.__get_faces_position(image)
         if face == ():
             return
-        confidence = face[2]
-        return [self.__crop_face(image, face), face, confidence]
+        confidence = float(face[2][0]) / 10.0
+        cropped_face = self.__crop_face(image, face)
+        face = face[0][0]
+        return [cropped_face, face, 0.0]
 
     def is_face(self):
         return self._faces != []
